@@ -92,10 +92,25 @@ public class ARCard1 : MonoBehaviour
                 spriteDestruido.SetActive(false);
                 break;
             case CardPose.ATTACK:
+                modeloATK.SetActive(true);
+                botonATK.SetActive(true);
+                botonDEF.SetActive(true);
+                spriteDEF.SetActive(false);
+                spriteDestruido.SetActive(false);
                 break;
             case CardPose.DEFENSE:
+                modeloATK.SetActive(false);
+                botonATK.SetActive(true);
+                botonDEF.SetActive(true);
+                spriteDEF.SetActive(true);
+                spriteDestruido.SetActive(false);
                 break;
             case CardPose.DESTROYED:
+                modeloATK.SetActive(false);
+                botonATK.SetActive(true);
+                botonDEF.SetActive(true);
+                spriteDEF.SetActive(false);
+                spriteDestruido.SetActive(true);
                 break;
 
         }
