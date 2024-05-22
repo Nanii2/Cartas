@@ -10,6 +10,7 @@ public class ARbutton : MonoBehaviour
 
     void OnMouseDown()
     {
+        Debug.Log("se ha pulsado el boton");
         action.Invoke(); //llama la funcion del action
     }
 }
