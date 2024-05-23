@@ -41,6 +41,8 @@ public class CardGameManger : MonoBehaviour
 
         }
         nCartasDerrotadas = 0;
+        sliderJ1.value = 4000;
+        sliderJ2.value = 4000;
 
     }
 
@@ -50,8 +52,8 @@ public class CardGameManger : MonoBehaviour
         ActualizaListaCartas();
         CompruebaBotonCombate();
         CompruebaPropietarioCartas();
-        ResetGame();
     }
+
     public void Combate()
     {
         //COGEMOS LAS 2 PRIMERAS CARTAS TRACKEADAS
@@ -135,7 +137,11 @@ public class CardGameManger : MonoBehaviour
 
             }
         }
-       
+        else
+        {
+            botonCombate.SetActive(false);
+
+        }
 
 
     }
@@ -145,14 +151,15 @@ public class CardGameManger : MonoBehaviour
 
         cartasTrackeadas.Clear();
         nCartasTrackeadas = 0;
-
+        Debug.Log(cartasEnEscena.Length);
         foreach (ARCard1 carta in cartasEnEscena)
         {
+                Debug.Log("carta añadida");
 
             if(carta.GetStatus() != Vuforia.Status.NO_POSE)
             {
                 cartasTrackeadas.Add(carta);
-                nCartasTrackeadas ++;
+                nCartasTrackeadas++;
             }
 
         }
